@@ -1,3 +1,6 @@
+############ BOOTSTRAPPING ###############
+#Test robustness. Resample 80% Egenes and rerun network inference on new Egene subset.
+
 ############ FUNCTIONS & LIBRARIES ###############
 library(dplyr)
 install.packages("dgof") 
@@ -69,17 +72,13 @@ for (i in 1:200){
   
 }
 
-#check the distances of the null nems
+#Check the distances of the null nems
 null.distances<-labnetmet::generate_distances(nullmodels, trans_dist)
 labnetmet::plot_dist(nullmodels, trans_dist)
 null.distances.long<-labnetmet::generate_distances_long(nullmodels, trans_dist)
 
-
-#Do Kolmogorov–Smirnov test
+#Kolmogorov–Smirnov test
 
 ks<-dgof::ks.test(bootstrap.distances.long$distance, null.distances.long$distance)
-
-
-mean(bootstrap.distances); mean(null.distances); ks
 
 

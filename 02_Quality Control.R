@@ -1,8 +1,8 @@
-##################### Quality Control - Test & Check ########################
+##################### QC - TEST & CHECK ########################
 # Originally designed as a QC pipeline. For this specific data, this pipeline wasn't appropriate 
 # (data had been pre-QCed by original authors/mitochondrial QC was too stringent for low cell 
 # counts).
-##########################################################################################
+#############################################################################
 
 library(scater)
 library(SCperturb)
